@@ -80,11 +80,11 @@ The repository is structured as follows:
 │   └── utils.py
 
 
-- README.md : Provides an overview and explanation of the project structure, usage, and instructions.
+- `README.md`: Provides an overview and explanation of the project structure, usage, and instructions.  
 
-- `Solution_pipeline.ipynb`: Jupyter notebook containing the detailed solution report, including analysis, methodology, and results, with ready-to-run training and inference.
+- `Solution_pipeline.ipynb`: Jupyter notebook containing the detailed solution report, including analysis, methodology, and results, with ready-to-run training and inference.  
 
-- `Submissions/`: Stores trained model weights for each fold and model configuration during training. Also contains the generated `.npz` file after inference.
+- `Submissions/`: Stores trained model weights for each fold and model configuration during training. Also contains the generated `.npz` file after inference.  
 
 - `data/`: Contains dataset folders and CSV files.  
   - Expected datasets (should be unzipped here):  
@@ -92,17 +92,17 @@ The repository is structured as follows:
     - `train_extended_1/`  
     - `train_extended_2/`  
     - `test_data/`  
-  - CSV files for each fold are generated according to the procedure in `Solution_pipeline.ipynb`.
+  - CSV files for each fold are generated according to the procedure in `Solution_pipeline.ipynb`.  
 
-- `model_folds.yaml`: Configuration file specifying fold assignments for each model. Used by `run_training.py` to automate training across folds and models.
+- `model_folds.yaml`: Configuration file specifying fold assignments for each model. Used by `run_training.py` to automate training across folds and models.  
 
-- `predict.py`: Script for generating predictions on the test dataset using trained models.
+- `predict.py`: Script for generating predictions on the test dataset using trained models.  
 
-- `requirements.txt`: Lists required Python packages and their specific versions for environment setup.
+- `requirements.txt`: Lists required Python packages and their specific versions for environment setup.  
 
-- `run_training.py`: Automates the full training process by iterating through all folds and relevant training scripts (`train_EVA_16_*.py`) based on fold assignments in `model_folds.yaml`.
+- `run_training.py`: Automates the full training process by iterating through all folds and relevant training scripts (`train_EVA_16_*.py`) based on fold assignments in `model_folds.yaml`.  
 
-- `speed_structure_checkpoints/`: Contains trained model checkpoints under the subfolder `Checkpoints/`, used for inference.
+- `speed_structure_checkpoints/`: Contains trained model checkpoints under the subfolder `Checkpoints/`, used for inference.  
 
 - `src/`: Source code directory with various modules:  
   - `dataset.py`: Dataset routines for loading seismic data and velocity, converting them to tensors for training and inference.  
@@ -121,7 +121,8 @@ The repository is structured as follows:
     - `train_EVA_16_Large_Split_10_Multi_MHA_4_heads.py`  
     - `train_EVA_16_Large_Split_10_Single_MHA_4_heads.py`  
     - `train_EVA_16_Large_Split_9_Multi_MHA_4_heads.py`  
-  - `utils.py`: General utility functions used across the project.
+  - `utils.py`: General utility functions used across the project.  
+
 
 
 
