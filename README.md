@@ -34,18 +34,20 @@ conda activate onward
 ```
 
 # Project Structure
+
 The repository is structured as follows:
-```
+
+```text
 .
 ├── README.md
 ├── Solution_pipeline.ipynb
 ├── Submissions/
 ├── data/
 │   ├── test.csv
-│   ├── test_data
-│   ├── train_data
-│   ├── train_extended_1
-│   ├── train_extended_2
+│   ├── test_data/
+│   ├── train_data/
+│   ├── train_extended_1/
+│   ├── train_extended_2/
 │   ├── train_fold0.csv
 │   ├── train_fold1.csv
 │   ├── train_fold2.csv
@@ -61,14 +63,14 @@ The repository is structured as follows:
 ├── requirements.txt
 ├── run_training.py
 ├── speed_structure_checkpoints/
-│   ├── Checkpoints
+│   ├── Checkpoints/
 │   └── __init__.py
 ├── src/
 │   ├── __init__.py
-│   ├── __pycache__
+│   ├── __pycache__/
 │   ├── dataset.py
 │   ├── engine.py
-│   ├── models
+│   ├── models/
 │   ├── muon.py
 │   ├── prepare_data-test.py
 │   ├── prepare_data_train.py
@@ -77,8 +79,6 @@ The repository is structured as follows:
 │   ├── train_EVA_16_Large_Split_10_Single_MHA_4_heads.py
 │   ├── train_EVA_16_Large_Split_9_Multi_MHA_4_heads.py
 │   └── utils.py
-​
-```
 
 - `README.md`: This file provides an overview and explanation of the project structure, usage, and instructions.
 
