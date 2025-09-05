@@ -38,7 +38,7 @@ from src.utils import *
 
 
 # ------------------------------
-# ✅ Inference Configuration
+#  Inference Configuration
 # ------------------------------
 class args:
     """
@@ -63,7 +63,7 @@ class args:
 
 
 # ------------------------------
-# ✅ Create EVA Model
+#  Create EVA Model
 # ------------------------------
 def create_eva_model(args, model_name, fold):
     """
