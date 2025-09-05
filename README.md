@@ -109,10 +109,10 @@ The repository is structured as follows:
   - `dataset.py`: Dataset routines for loading seismic data and velocity, converting them to tensors for training and inference.  
   - `engine.py`: Handles training and validation logic for one epoch.  
   - `models/`: Contains model definitions and handlers, including EVA-16 variants with Multi-Head Attention.  
-    - `train_EVA_16_Large_Split_10_Multi_MHA_2_heads.py`  
-    - `train_EVA_16_Large_Split_10_Multi_MHA_4_heads.py`  
-    - `train_EVA_16_Large_Split_10_Single_MHA_4_heads.py`  
-    - `train_EVA_16_Large_Split_9_Multi_MHA_4_heads.py`  
+    - `model_EVA_16_Large_Split_10_Multi_MHA_2_heads.py`  
+    - `model_EVA_16_Large_Split_10_Multi_MHA_4_heads.py`  
+    - `model_EVA_16_Large_Split_10_Single_MHA_4_heads.py`  
+    - `model_EVA_16_Large_Split_9_Multi_MHA_4_heads.py`  
     - `model_EVA_MHA_Handler.py`  
   - `muon.py`: Implementation of the Muon optimizer.  
   - `prepare_data-test.py`: Generates CSV files for the test dataset, required by dataset and dataloader scripts.  
