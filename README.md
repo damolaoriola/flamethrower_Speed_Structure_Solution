@@ -80,55 +80,49 @@ The repository is structured as follows:
 │   └── utils.py
 
 
-- `README.md`: This file provides an overview and explanation of the project structure, usage, and instructions.
+- `README.md`: Provides an overview and explanation of the project structure, usage, and instructions.
 
-- `Solution_pipeline.ipynb`: A Jupyter notebook containing a detailed solution report, including analysis, methodology, and results with ready to run training and inference
+- `Solution_pipeline.ipynb`: Jupyter notebook containing the detailed solution report, including analysis, methodology, and results, with ready-to-run training and inference.
 
-- `Submissions/`: Directory to store trained model weights for each fold and model configuration during training. Also generated .npz file after inference.
+- `Submissions/`: Stores trained model weights for each fold and model configuration during training. Also contains the generated `.npz` file after inference.
 
-- `data/`: Contains dataset folders. The following datasets should be unzipped here into:
-        train_data
-        train_extended_1
-        train_extended_2
-        test_data
-    CSV files for each fold are generated according to the procedure in Solution_pipeline.ipynb.
+- `data/`: Contains dataset folders and CSV files.  
+  - Expected datasets (should be unzipped here):  
+    - `train_data/`  
+    - `train_extended_1/`  
+    - `train_extended_2/`  
+    - `test_data/`  
+  - CSV files for each fold are generated according to the procedure in `Solution_pipeline.ipynb`.
 
-- `model_folds.yaml`:Configuration file specifying fold assignments for each model. Used by run_training.py to automate training across folds and models.
+- `model_folds.yaml`: Configuration file specifying fold assignments for each model. Used by `run_training.py` to automate training across folds and models.
 
 - `predict.py`: Script for generating predictions on the test dataset using trained models.
 
 - `requirements.txt`: Lists required Python packages and their specific versions for environment setup.
 
-- `run_training.py`: Script to automate the full training process by iterating through all folds and relevant training scripts (train_EVA_16_***.py) based on fold assignments in model_folds.yaml.
+- `run_training.py`: Automates the full training process by iterating through all folds and relevant training scripts (`train_EVA_16_*.py`) based on fold assignments in `model_folds.yaml`.
 
-- `speed_structure_checkpoints/`: Contains trained model checkpoints under the subfolder Checkpoints/ used for inference.
+- `speed_structure_checkpoints/`: Contains trained model checkpoints under the subfolder `Checkpoints/`, used for inference.
 
-- `src/`: Source code directory with various modules:
+- `src/`: Source code directory with various modules:  
+  - `dataset.py`: Dataset routines for loading seismic data and velocity, converting them to tensors for training and inference.  
+  - `engine.py`: Handles training and validation logic for one epoch.  
+  - `models/`: Contains model definitions and handlers, including EVA-16 variants with Multi-Head Attention.  
+    - `train_EVA_16_Large_Split_10_Multi_MHA_2_heads.py`  
+    - `train_EVA_16_Large_Split_10_Multi_MHA_4_heads.py`  
+    - `train_EVA_16_Large_Split_10_Single_MHA_4_heads.py`  
+    - `train_EVA_16_Large_Split_9_Multi_MHA_4_heads.py`  
+    - `model_EVA_MHA_Handler.py`  
+  - `muon.py`: Implementation of the Muon optimizer.  
+  - `prepare_data-test.py`: Generates CSV files for the test dataset, required by dataset and dataloader scripts.  
+  - `prepare_data-train.py`: Executes K-Means clustering on training data to identify seismic groups, then creates K-Fold CSV files (e.g., `train_fold0.csv`, `val_fold0.csv`) for training and validation.  
+  - **Training scripts (`train_EVA_16_*.py`)**: Each script runs training for a specific model configuration and fold. These are called with command-line arguments specifying the fold, data directory (absolute path), and checkpoint save path.  
+    - `train_EVA_16_Large_Split_10_Multi_MHA_2_heads.py`  
+    - `train_EVA_16_Large_Split_10_Multi_MHA_4_heads.py`  
+    - `train_EVA_16_Large_Split_10_Single_MHA_4_heads.py`  
+    - `train_EVA_16_Large_Split_9_Multi_MHA_4_heads.py`  
+  - `utils.py`: General utility functions used across the project.
 
-        - `Dataset.py`: Dataset routines for loading seismic data and seismic velocity, converting to tensors for training and inference.
-
-        - `engine.py`: Handles training and validation logic for one epoch.
-
-        - `models`: Contains model definitions and handlers, including EVA 16 models with Multi-Head Attention.
-        model_EVA_16_Large_Split_10_Multi_MHA_2_heads.py
-        model_EVA_16_Large_Split_10_Multi_MHA_4_heads.py
-        model_EVA_16_Large_Split_10_Single_MHA_4_heads.py
-        model_EVA_16_Large_Split_9_Multi_MHA_4_heads.py
-        model_EVA_MHA_Handler.py
-        
-        - `muon.py`: Implementation of the Muon optimizer.
-
-        - `prepare_data-test.py`: Script to generate CSV files for the test dataset, required by dataset and dataloader scripts.
-
-        - `prepare_data-train.py`: Executes K-Means clustering on training data to identify seismic groups, then creates K-Fold CSV files for training and validation folds (e.g., train_fold0.csv, val_fold0.csv). Required by dataset and dataloader scripts.
-
-        - `Training scripts (train_EVA_16_*.py)`: Each script runs training for a specific model configuration and fold. These are called with command-line arguments specifying the fold, data directory (absolute path), and checkpoint save path. Manual runs are not required as run_training.py automates this process.
-        train_EVA_16_Large_Split_10_Multi_MHA_2_heads.py
-        train_EVA_16_Large_Split_10_Multi_MHA_4_heads.py
-        train_EVA_16_Large_Split_10_Single_MHA_4_heads.py
-        train_EVA_16_Large_Split_9_Multi_MHA_4_heads.py
-        
-        - `utils.py`: General utility functions used across the project.
 
 
 # Solution Reproduction Note
