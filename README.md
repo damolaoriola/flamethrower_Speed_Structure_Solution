@@ -80,7 +80,7 @@ The repository is structured as follows:
 │   └── utils.py
 
 
-- `README.md`: Provides an overview and explanation of the project structure, usage, and instructions.
+- README.md : Provides an overview and explanation of the project structure, usage, and instructions.
 
 - `Solution_pipeline.ipynb`: Jupyter notebook containing the detailed solution report, including analysis, methodology, and results, with ready-to-run training and inference.
 
