@@ -137,10 +137,12 @@ Inference takes 9 minutes to inference the 3 models per 5 folds, ensemble and ma
 # Source Processing Improvements
 In order to show improvements with certain architetcure changes, I provide a table with the experiments conducted during the development of the solution. The table includes the Experiment Description and public MAPE score.
 
-| Experiment Id | Description | Public MAPE Score| Checkpoints|
-| --- | --- | --- |
-| 1 | One Fold EVA Large Split 10 + Mean average pooling channel (No attention)| 0.0246 - 0.0248 | NIL|
-| 2 | One Fold EVA Large Split 10 + Channel Multihead Attention(4 heads) + Mean Fusion| 0.02408 - 0.02419 |EVA_16_Large_Split_10_Single_MHA_4_heads|
-| 3 | One Fold EVA Large Split 10 + Channel Multihead Attention(4 heads) + Fusion Multihead Attention(2 heads) |0.02391 - 0.02398 |EVA_16_Large_Split_10_Dual_MHA_4_heads|
-| 4 | 5 Folds EVA Large Split 10 + Channel Multihead Attention(4 heads) + Fusion Multihead Attention(2 heads) |0.023491|EVA_16_Large_Split_10_Dual_MHA_4_heads|
-| 5 | 5 Folds Ensemble of 2, 3 + One additional configuration of Channel Multihead Fusion |0.023458|EVA_16_Large_Split_10_Single_MHA_4_heads, EVA_16_Large_Split_10_Dual_MHA_4_heads, EVA_16_Large_Split_10_Dual_MHA_2_heads, EVA_16_Large_Split_9_Dual_MHA_4_heads|# flamethrower_Speed_Structure_Solution
+## Experiment Results
+
+| Experiment Id | Description | Public MAPE Score | Checkpoints |
+|---------------|-------------|-------------------|-------------|
+| 1 | One Fold EVA Large Split 10 + Mean average pooling channel (No attention) | 0.0246 – 0.0248 | NIL |
+| 2 | One Fold EVA Large Split 10 + Channel Multihead Attention (4 heads) + Mean Fusion | 0.02408 – 0.02419 | EVA_16_Large_Split_10_Single_MHA_4_heads |
+| 3 | One Fold EVA Large Split 10 + Channel Multihead Attention (4 heads) + Fusion Multihead Attention (2 heads) | 0.02391 – 0.02398 | EVA_16_Large_Split_10_Dual_MHA_4_heads |
+| 4 | 5 Folds EVA Large Split 10 + Channel Multihead Attention (4 heads) + Fusion Multihead Attention (2 heads) | 0.023491 | EVA_16_Large_Split_10_Dual_MHA_4_heads |
+| 5 | 5 Folds Ensemble of 2, 3 + One additional configuration of Channel Multihead Fusion | 0.023458 | EVA_16_Large_Split_10_Single_MHA_4_heads, EVA_16_Large_Split_10_Dual_MHA_4_heads, EVA_16_Large_Split_10_Dual_MHA_2_heads, EVA_16_Large_Split_9_Dual_MHA_4_heads |
