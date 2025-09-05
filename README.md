@@ -36,7 +36,7 @@ conda activate onward
 
 The repository is structured as follows:
 
-```text
+```
 .
 ├── README.md
 ├── Solution_pipeline.ipynb
@@ -78,6 +78,7 @@ The repository is structured as follows:
 │   ├── train_EVA_16_Large_Split_10_Single_MHA_4_heads.py
 │   ├── train_EVA_16_Large_Split_9_Multi_MHA_4_heads.py
 │   └── utils.py
+```
 
 
 - `README.md`: Provides an overview and explanation of the project structure, usage, and instructions.  
